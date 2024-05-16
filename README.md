@@ -8,7 +8,7 @@ This repository comprises my coding projects from various courses in Earth, Atmo
 + We realeased a radiosonde in class [video](https://www.youtube.com/watch?v=G0DdoB83-7U)!
 
 # EAPS 431: Synoptic Lab 1 and EAPS 520: Theory of Climate
-+ 
++ Used Python with weather data to determine properties of the atmosphere
 
 # CS177: Python Programming
 + Learned the basics of Python. We were also introduced to basic matplotlib usage
