@@ -3,5 +3,5 @@
 + Our main learning was through class lectures, using the instruments in the field, and through [MetEd](https://www.meted.ucar.edu/index.php)
 + Conducted group and independent field work
 
-# EAPS 431: Synoptic Lab 1 and EAPS 520: Theory of Climate
+# EAPS 431: Synoptic Lab 1
 + Used Python with weather data to determine properties of the atmosphere
