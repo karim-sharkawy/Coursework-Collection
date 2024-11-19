@@ -1,4 +1,7 @@
-# STAT350: Introduction To Statistics
+# STAT 417: Statistical Analysis
++ 
+
+# STAT 350: Introduction To Statistics
 + This was a data-centered introduction covering the core concepts and methods of applied statistics. It included exploratory data analysis, sample design, and experimental design.
 + We delved into probability distributions and simulation techniques, as well as sampling distributions. The rationale behind statistical inference was discussed, along with constructing confidence intervals and conducting tests for one and two samples.
 + We explored inferential analysis for contingency tables, regression, and correlation. Additionally, an introduction was provided to regression with several explanatory variables, with a strong emphasis on utilizing statistical software throughout.
