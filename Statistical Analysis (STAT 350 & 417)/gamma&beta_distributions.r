@@ -23,6 +23,17 @@ plot(x, gamma_ratio, type = "l", col = "blue", lwd = 2,
      xlab = "x", ylab = "gamma1(x) / gamma2(x)")
 grid()
 
+## FROM HW SOLUTION
+alpha <- 2
+beta <- 2
+n <- 3
+x <- c(2, 5, 1)
+S <- sum(x)
+posterior_odds <- (1-pgamma(1,alpha+S,beta+n))/(pgamma(1,alpha+S,beta+n))
+prior_odds <- (1-pgamma(1,alpha,beta))/(pgamma(1,alpha,beta))
+BF <- posterior_odds/prior_odds
+print(BF)
+
 # HW10: Q2
 # Parameters for the first beta distribution
 shape1_a <- 2
@@ -47,3 +58,13 @@ plot(x, beta_ratio, type = "l", col = "red", lwd = 2,
      main = "Ratio of Two Beta Distributions",
      xlab = "x", ylab = "beta1(x) / beta2(x)")
 grid()
+
+## FROM HW SOLUTION
+alpha <- 2
+beta <- 2
+n <- 10
+S <- 7
+posterior_odds <- (1-pbeta(0.5,alpha+S,beta+n-S))/(pbeta(0.5,alpha+S,beta+n-S))
+prior_odds <- (1-pbeta(0.5,alpha,beta))/(pbeta(0.5,alpha,beta))
+BF <- posterior_odds/prior_odds
+print(BF)
