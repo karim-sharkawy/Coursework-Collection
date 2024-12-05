@@ -22,8 +22,8 @@ disp(orth_basis);
 % b: Gauss Quadrature
 disp('b:');
 % Find the 3rd-degree polynomial in the orthogonal basis
-P3 = orth_basis(4);
-coeffs_P3 = fliplr(coeffs(P3, x));
+P3 = orth_basis(4);  % The 3rd-degree orthogonal polynomial
+coeffs_P3 = coeffs(P3, x, 'All');
 roots_P3 = double(roots(coeffs_P3));  % Roots of the polynomial
 
 % Weights for the Gauss Quadrature
@@ -35,29 +35,29 @@ for i = 1:length(roots_P3)
             li = li * (x - roots_P3(j)) / (roots_P3(i) - roots_P3(j));
         end
     end
-    weights(i) = double(int(li, x, -1, 1));
+    weights(i) = double(int(li^2, x, -1, 1)); % Fix weight computation
 end
 
-disp('Gauss Quadrature Points:');
+disp('Points:');
 disp(roots_P3);
-disp('Weights:');
+disp('With weights of:');
 disp(weights);
 
 % c: Degree of Exactness
 disp('c:');
 largest_degree = 2 * length(roots_P3) - 1;
-disp('largest degree polynomial for which this formula is exact:');
+disp('Largest degree polynomial for which this formula is exact (2n-1):');
 disp(largest_degree);
 
 % d: Approximation of Integral
 disp('d:');
 f = cos(x); 
-f_vals = subs(f, x, roots_P3);  % Evaluate f at Gauss points
-approx_integral = dot(weights, f_vals);
-disp('Integral approximation of cos(x) from [0, 1]: ');
-disp(num2str(actual_integral, '%.9f'));
+f_vals = subs(f, x, roots_P3);
+approx_integral = double(dot(weights, f_vals));  % Convert to numeric
+disp('Integral approximation of cos(x) on [0, 1]: ');
+disp(num2str(approx_integral, '%.9f'));
 
 % Compute the actual integral for comparison
 actual_integral = double(int(f, 0, 1));
 disp('True integral of cos(x):');
-disp(actual_integral);
+disp(num2str(actual_integral, '%.9f'));
